@@ -67,6 +67,11 @@ return {
           desc = "Find words in all files"
         },
 
+        ["\\"] = {
+          "<Cmd>ToggleTerm size=10 direction=horizontal<CR>",
+          desc = "Toggle terminal"
+        },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
