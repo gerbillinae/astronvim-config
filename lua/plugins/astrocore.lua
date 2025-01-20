@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -58,6 +56,15 @@ return {
             )
           end,
           desc = "Close buffer from tabline",
+        },
+
+        ["//"] = {
+          function()
+            require("telescope.builtin").live_grep {
+              additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
+            }
+          end,
+          desc = "Find words in all files"
         },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
